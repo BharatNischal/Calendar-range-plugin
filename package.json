@@ -1,0 +1,51 @@
+{
+  "name": "@nischalbharat/calendar-range-plugin",
+  "version": "0.0.0",
+  "description": "Custom Superset Chart plugin",
+  "keywords": [
+    "superset"
+  ],
+  "homepage": "https://github.com/BharatNischal/Calendar-range-plugin#readme",
+  "bugs": {
+    "url": "https://github.com/BharatNischal/Calendar-range-plugin/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BharatNischal/Calendar-range-plugin.git"
+  },
+  "license": "Apache-2.0",
+  "author": "",
+  "sideEffects": [
+    "*.css"
+  ],
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "files": [
+    "esm",
+    "lib"
+  ],
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "@superset-ui/chart-controls": "0.17.84",
+    "@superset-ui/core": "0.17.81",
+    "@types/mathjs": "^6.0.7",
+    "lodash": "^4.17.15",
+    "mathjs": "^8.0.1",
+    "moment": "^2.26.0",
+    "rison": "^0.1.1"
+  },
+  "devDependencies": {
+    "@babel/types": "^7.13.12",
+    "@types/jest": "^26.0.0",
+    "jest": "^26.0.1"
+  },
+  "peerDependencies": {
+    "@ant-design/icons": "^4.2.2",
+    "react": "^16 || ^17"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
