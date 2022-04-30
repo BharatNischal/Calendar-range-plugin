@@ -65,6 +65,7 @@ export function CustomFrame(props: FrameComponentProps) {
                 onChange('sinceDatetime', datetime.format(MOMENT_FORMAT))
               }
               allowClear={false}
+              inputReadOnly
             />
           </Row>
         </Col>
@@ -86,6 +87,7 @@ export function CustomFrame(props: FrameComponentProps) {
                 )
               }
               allowClear={false}
+              inputReadOnly
             />
           </Row>
         </Col>

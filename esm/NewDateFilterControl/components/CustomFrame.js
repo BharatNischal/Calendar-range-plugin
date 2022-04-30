@@ -64,7 +64,8 @@ export function CustomFrame(props) {
       onChange: (datetime) =>
       onChange('sinceDatetime', datetime.format(MOMENT_FORMAT)),
 
-      allowClear: false }))),
+      allowClear: false,
+      inputReadOnly: true }))),
 
 
 
@@ -85,7 +86,8 @@ export function CustomFrame(props) {
       datetime.format('YYYY-MM-DD[T]23:59:59')),
 
 
-      allowClear: false }))))));
+      allowClear: false,
+      inputReadOnly: true }))))));
 
 
 

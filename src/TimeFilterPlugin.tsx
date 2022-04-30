@@ -23,6 +23,8 @@ import DateFilterControl from './NewDateFilterControl';
 import { NO_TIME_RANGE } from 'src/explore/constants';
 import { PluginFilterTimeProps } from './types';
 import { FilterPluginStyle } from 'src/filters/components/common';
+import moment from 'moment';
+import { MOMENT_FORMAT } from './NewDateFilterControl/utils';
 
 const TimeFilterStyles = styled(FilterPluginStyle)`
   overflow-x: auto;
@@ -75,11 +77,20 @@ export default function TimeFilterPlugin(props: PluginFilterTimeProps) {
   const handleTimeRangeChange = useCallback(
     (timeRange?: string): void => {
       const isSet = timeRange && timeRange !== NO_TIME_RANGE;
+      let actualStartDate;
+      let actualEndDate;
+      if (isSet) {
+        const [startTime, endTime] = timeRange.split(' : ');
+        actualStartDate = moment(startTime).format(MOMENT_FORMAT);
+        actualEndDate = moment(endTime)
+          .add(1, 'd')
+          .format('YYYY-MM-DD[T]00:00:00');
+      }
       setDataMask({
         extraFormData: isSet
           ? {
-              time_range: timeRange,
-              time_range_endpoints: endpoints,
+              time_range: [actualStartDate, actualEndDate].join(' : '),
+              // time_range_endpoints: endpoints,
             }
           : {},
         filterState: {
