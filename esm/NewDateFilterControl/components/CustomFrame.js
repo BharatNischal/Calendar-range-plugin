@@ -19,7 +19,7 @@
 import React from 'react';
 import { t } from '@superset-ui/core';
 
-import { Col, Row } from 'src/common/components';
+import { Col, Row } from 'src/components';
 import { DatePicker } from 'src/components/DatePicker';
 import { InfoTooltipWithTrigger } from '@superset-ui/chart-controls';
 import {
